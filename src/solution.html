@@ -23,7 +23,7 @@
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="solution.html" class="active">Solutions</a></li>
                         <li><a href="signup.html">Sign Up</a></li>
-                        <li><a href="#" class="waves-effect waves-light btn pink darken-3">LOGIN</a></li>
+                        <li><a href="#modal_button" class="waves-effect waves-light btn pink darken-3 modal-trigger">LOGIN</a></li>
                         <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -32,11 +32,38 @@
             </div>
         </nav>
 
+         <!---===== MODAL STRUCTURE  ========-->
+         <div class="modal" id="modal_button">
+            <div class="modal-content">
+                <h4>Account Login</h4>
+                <p>Login to access your account dashboard</p>
+                <form>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="M-email" type="email">
+                            <label for="M-email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="M-password" type="password">
+                            <label for="M-password">Password</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="waves-effect waves-light btn grey modal-close"><i class="fas fa-redo-alt"></i> RESET PASSWORD</a>
+                <a href="#" class="waves-effect waves-light btn pink darken-3 modal-close"><i class="fas fa-lock"></i> LOGIN</a>
+            </div>
+        </div>
+
+<!---============  Mobile Navbar  =====-->
         <ul class="sidenav" id="mobile-demo">
             <li><a href="../index.html">Home</a></li>
             <li><a href="solution.html">Solutions</a></li>
             <li><a href="signup.html">Sign Up</a></li>
-            <li><a class="waves-effect waves-light btn">LOGIN</a></li>
+            <li><a href="#modal_button" class="waves-effect waves-light btn pink darken-3 modal-trigger">LOGIN</a></li>
             <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#"><i class="fab fa-instagram"></i></a></li>
@@ -65,7 +92,7 @@
                         <div class="row">
                             <div class="col s12">
                                 <ul class="tabs">
-                                    <li class="tab col s4"><a href="#hosting" class="">CLOUD HOSTING</a></li>
+                                    <li class="tab col s4"><a href="#hosting" class="active">CLOUD HOSTING</a></li>
                                     <li class="tab col s4"><a href="#storage">CLOUD STORAGE</a></li>
                                     <li class="tab col s4"><a href="#database">CLOUD DATABASE</a></li>
                                 </ul>
@@ -162,29 +189,17 @@
     </footer>
 
 
-    <script>
-
-                  // Tabs
-    $(document).ready(function () {
-        $('.tabs').tabs();
-    });
-
-
-        // Side Menu
-        const sideNav = document.querySelector('.sidenav');
-        M.Sidenav.init(sideNav, {});
-
-   
-
-    </script>
-
-
+    <script src="../js/jquery.3.4.1.js"></script>
     <script src="../js/materialize.min.js"></script>
 
-
-    <!--=============== JQUERY FILE JS ===============-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script>
+        $(document).ready(function () {
+            $('select').formSelect();
+            $('.sidenav').sidenav();
+            $('.modal').modal();
+            $('.tabs').tabs();
+        });
+    </script>
 
    
 </body>
