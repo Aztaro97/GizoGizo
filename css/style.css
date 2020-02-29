@@ -33,7 +33,11 @@
 .footer-top a {
     display: block;
 }
-
+@media only screen and (max-width:992px) {
+    .title h1 {
+        font-size: 1.6rem;
+    }
+}
 
 
 @media only screen and (max-width:520px) {
